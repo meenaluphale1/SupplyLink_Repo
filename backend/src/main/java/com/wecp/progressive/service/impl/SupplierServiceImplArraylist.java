@@ -2,11 +2,13 @@ package com.wecp.progressive.service.impl;
 
 import com.wecp.progressive.entity.Supplier;
 import com.wecp.progressive.service.SupplierService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+@Service
 public class SupplierServiceImplArraylist implements SupplierService {
 
     private static List<Supplier> supplierList = new ArrayList<>();

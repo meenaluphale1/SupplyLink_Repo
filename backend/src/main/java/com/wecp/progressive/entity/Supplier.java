@@ -4,7 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+/*
+ * 
+{
+"supplierId":1111,
+"supplierName":"s1",
+"email":"s1@gmail.com",
+"phone":"12345678",
+"address":"vasai",
+"username":"s1",
+"password":"s123",
+"role":"supplier"
+}
+ */
 @Entity
 public class Supplier implements Comparable<Supplier> {
 
