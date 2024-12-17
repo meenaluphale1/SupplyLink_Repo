@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+    <ng-container *ngIf="role === 'ADMIN'">
+        <h2>Welcome ADMIN</h2>
+
+        <section class="card">
+            <h3>Supplier List</h3>
+            <div *ngIf="suppliers.length === 0" class="empty-list">
+                No suppliers available.
+              </div>
+              <table *ngIf="suppliers.length !== 0" class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Supplier Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let supplier of suppliers">
+                        <td>{{ supplier.supplierId }}</td>
+                        <td>{{ supplier.supplierName }}</td>
+                        <td>{{ supplier.email }}</td>
+                        <td>{{ supplier.role }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h3>Warehouse List</h3>
+            <div *ngIf="warehouses.length === 0" class="empty-list">
+                No warehouses available.
+              </div>
+              <table *ngIf="warehouses.length !== 0" class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Warehouse Name</th>
+                        <th>Supplier Name</th>
+                        <th>Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let warehouse of warehouses">
+                        <td>{{ warehouse.warehouseId }}</td>
+                        <td>{{ warehouse.warehouseName }}</td>
+                        <td>{{ warehouse.supplierId }}</td>
+                        <td>{{ warehouse.capacity }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h3>Product List</h3>
+            <div *ngIf="products.length === 0" class="empty-list">
+                No products available.
+              </div>
+              <table *ngIf="products.length !== 0" class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Warehouse Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.productId }}</td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <!-- <td>{{ <product class="warehouseId"></product> }}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </ng-container>
+</div>
